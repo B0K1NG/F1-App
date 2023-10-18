@@ -1,0 +1,102 @@
+// If you want to run the program in terminal you need to type
+// g++ main.cpp F1Info.cpp Menu.cpp User.cpp Userauthentication.cpp Database.cpp -o F1App
+
+//----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// Database.cpp
+// defines a class that manages user information. 
+// It provides functionality for registering users, logging in, saving and loading user data from a file, 
+// finding and updating users, and managing the logged-in user. 
+// It also interacts with a UserAuthentication object, which is assumed to be a member of the Database class.
+
+// Database.h
+// defines the class Database, which is responsible for managing user information. 
+// It contains private member variables to store user data, the currently logged-in user, and a UserAuthentication object. 
+// The class provides various member functions for registering users, logging in, saving and loading user data, finding and updating users, 
+// and managing the logged-in user.
+
+//F1info.cpp
+// contains functions to display information about F1 drivers, teams, standings, schedule, and legends. 
+// Each function handles a specific aspect of F1 information and provides options for the user to interact with the program.
+
+// F1info.h
+// defines the class F1Info, which contains member functions for displaying various information related to Formula 1. 
+// It also includes a static constant currentYear for storing the current year.
+
+// main.cpp
+// creating an instance of the Menu class and entering a loop to repeatedly display menus and take user input. 
+// Depending on whether a user is logged in or not, it displays different menus. 
+// The user's choice is then used to trigger various actions like registering, logging in, quitting, or handling invalid choices.
+
+// Menu.cpp
+// corresponding source file that contains the actual implementation of the functions declared in menu.h. 
+// This is where each function's code is written and defined. It includes the details of how each function operates, interacts with member variables,
+//  and carries out specific tasks. 
+// When the program is compiled, the code from menu.cpp is combined with other source files to create the executable program.
+
+// Menu.h
+// header file that contains the declaration of the Menu class. 
+// It provides a blueprint of the class, including its member variables and member functions, without defining their implementations. 
+// This allows other parts of the program (such as main.cpp and other source files) to know what the Menu class is and how to use it,
+//  without needing to know the specific details of how each function works.
+
+// User.cpp
+// contains the implementation of functions related to managing user information. 
+// It includes setters to update attributes like username, password, name, etc., as well as getters to retrieve this information. 
+// Additionally, there are interactive functions like promptAndSetPassword() that guide the user through setting a secure password, 
+// and similar functions for capturing and validating the user's name, date of birth, and email address. 
+// These functions ensure that user-provided information meets specific criteria.
+
+// User.h
+// serves as the header file for the User class. It defines the class structure with private attributes such as 
+// username, password, name, surname, date of birth, and email.
+//  Public member functions are declared to set and retrieve these attributes. 
+
+// UserAuthentication.cpp
+// In the userauthentication.cpp file, the UserAuthentication class is implemented. 
+// It includes the corresponding header files (UserAuthentication.h and Database.h). 
+// The constructor initializes loggedIn to false and sets the reference to the provided Database object. 
+// The isLoggedIn() function returns the current login status. 
+// The setLoggedIn() function updates the login status based on the provided parameter. Lastly, setLoggedInUser() calls the setLoggedInUser() function
+//  of the associated Database object, passing in the provided User. 
+// This function is responsible for updating the logged-in user information in the database.
+
+// UserAuthentication.h
+// The userauthentication.h file acts as the header file for the UserAuthentication class. 
+// It declares the class with a private boolean attribute called loggedIn which tracks whether a user is currently logged in. 
+// It also includes a reference to a Database object. The class provides methods like isLoggedIn() to check the login status, setLoggedIn() 
+// to update the login status, and setLoggedInUser() to set the currently logged-in user in the associated Database.
+
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------
+
+//Difference between a header file and cpp file:
+// Header File:
+
+// Declarations: Contains the declarations of classes, functions, variables, etc.
+// No Implementation: Does not contain the actual code for the functions/methods; it only provides their signatures (names, return types, parameters).
+// Included in Other Files: Typically included in source files where the functionalities are needed.
+// Guard Clauses: Often includes preprocessor directives (like #ifndef, #define, #endif) to prevent multiple inclusions.
+
+// Source File:
+
+// Implementations: Contains the actual code for the functions/methods declared in the header file.
+// Can Include Headers: Can include other header files and use the functionalities declared in them.
+// Compiled: Along with other source files, compiled into machine code by the compiler.
+// Not Included in Other Files: Not typically included in other source files; rather, it's compiled separately.
+
+// In summary, the header file acts as an interface to the functionalities provided by the corresponding source file. 
+// This separation allows for cleaner and more modular code, as well as better organization of code across multiple files.
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------
+
+//Why does main.cpp does not have a header file?:
+
+// In C++ and similar programming languages, the main function does not typically have a header file.
+//  This is because the main function is the entry point of the program and it doesn't need to be declared or defined in a separate header file.
+
+// The main function is special in that it serves as the starting point of execution for a C++ program. 
+// When the program starts, the operating system calls the main function, and from there, the program's logic unfolds.
